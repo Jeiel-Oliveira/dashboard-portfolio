@@ -1,10 +1,16 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-export default function Image ({ src, types, ...rest }) {
+export default function Image ({ src, types, children, ...rest }) {
 
     return (        
-        <img src={src} {...rest} />                
+        <>
+            <img src={src} {...rest} />                
+
+            <div className="uk-text-center uk-margin-bottom">
+                {children}
+            </div>
+        </>
     )
 
 }
