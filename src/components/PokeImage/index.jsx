@@ -5,7 +5,7 @@ export default function Image ({ src, types, children, ...rest }) {
 
     return (        
         <>
-            <img src={src} {...rest} />                
+            <img src={src} {...rest} />
 
             <div className="uk-text-center uk-margin-bottom">
                 {children}

@@ -1,0 +1,40 @@
+.grid-item-sidebar {
+    grid-area: sidebar;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+    border: 5px solid black;    
+}
+
+.grid-item-navbar {
+    grid-area: navbar;
+
+    grid-row-start: 1;
+
+    grid-column-start: 2;
+    grid-column-end: 6;
+
+    border: 5px solid blue;
+}
+
+.grid-item-content {
+    grid-area: contente;
+
+    grid-row-start: 2;
+
+    grid-column-start: 2;
+    grid-column-end: 6;
+
+    border: 5px solid green;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: auto auto auto;        
+    
+    height: 100vh;
+}
