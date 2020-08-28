@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Navbar ({ className, ...rest }) {
+export default function Navbar ({ ...rest }) {
 
   return (
-    <div className={className}>
+    <div className="grid-item-navbar">
       oliver Queen
     </div>
   )  

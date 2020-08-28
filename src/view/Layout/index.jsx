@@ -1,21 +1,31 @@
 import React from 'react';
 
-import Sidebar from 'components/Sidebar'
-import Navbar from 'components/Navbar'
-import SearchPokemon from '../searchPokemon'
+import Sidebar from 'components/Sidebar';
 
-export default function Layout({  }) {
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import routes from 'utils/reactRoutes';
+
+export default function Layout() {	
+	
 	return (		
 		<div className="grid-layout">
-			
-			<Sidebar className="grid-item-sidebar" />
+			<Router>
+				<Sidebar />
 
-			<Navbar className="grid-item-navbar" />
+				<div className="grid-item-content">
+					<Switch>						
+						{routes.map((route) => (
+							<Route
+								key={route.key}
+								path={route.path}
+								children={<route.component />}
+							/>
+						))}
+					</Switch>
+				</div>
 
-			<div className="grid-item-content">
-				<SearchPokemon />
-			</div>
+			</Router>
 		</div>		
 	)
 

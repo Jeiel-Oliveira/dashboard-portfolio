@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const Card = styled.div `
-
-    border: 2px solid black;
+    border: 3px solid black;
     padding: 15px;
-    margin: 30px 20px;    
+    border-radius: 10px;
+`
+
+export const Title = styled.h3 `
 
 `

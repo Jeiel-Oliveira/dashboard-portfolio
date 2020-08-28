@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import 'uikit/dist/css/uikit.min.css'
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
