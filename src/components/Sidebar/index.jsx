@@ -22,11 +22,15 @@ export default function Sidebar ({ ...rest }) {
     <div className="grid-item-sidebar">
       <ul>
         {routes.map((route) =>
-          <LinkSidebar
-            key={route.key}
-            name={route.name}
-            path={route.path}
-          />
+          <>
+          {!route.hide && (
+            <LinkSidebar
+              key={route.key}
+              name={route.name}
+              path={route.path}
+            />
+          )}
+          </>
         )}
       </ul>
     </div>

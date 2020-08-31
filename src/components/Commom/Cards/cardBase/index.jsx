@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import propTypes from 'prop-types';
 
-import { Card } from './styled'
+import { Card } from './styled';
 
 function CardBase({ children, color, ...rest }) {
   return (
@@ -12,7 +13,7 @@ function CardBase({ children, color, ...rest }) {
 
 CardBase.defaultProps = {
   type: "text",
-  color: "black"
+  color: "#e4cece"
 }
 
 CardBase.propTypes = {

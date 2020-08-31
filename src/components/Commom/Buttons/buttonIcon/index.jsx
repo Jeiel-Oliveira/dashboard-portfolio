@@ -1,12 +1,11 @@
 import React from 'react'
 
-import { Button } from './styled'
 import propTypes from 'prop-types'
 import Ionicons from 'components/ionicons'
 
 function ButtonIcon({ name, size, ...rest }) {
   return (
-    <Button {...rest} ><Ionicons size={size} name={name} color={"white"} /></Button>
+    <button className="btn btn-primary" {...rest} ><Ionicons size={size} name={name} color={"white"} /></button>
   )
 }
 

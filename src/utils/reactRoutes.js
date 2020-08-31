@@ -1,5 +1,8 @@
 import React from 'react';
-import SearchPokemon from 'view/ListPokemon';
+
+import ListPokemon from 'view/Pokemon/ListPokemon';
+import Pokemon from 'view/Pokemon/Pokemon';
+
 import Home from 'view/Home';
 
 const homeinfo = {
@@ -9,13 +12,21 @@ const homeinfo = {
   component: () => <Home />
 }
 
-const pokeapi = {
-  key:2,
-  name:"Pokeapi",
-  path:"/pokemons",
-  component: () =>  <SearchPokemon />
+const listPokemon = {
+  key: 2,
+  name: "Lista de pokemons",
+  path: "/pokemons",
+  component: () =>  <ListPokemon />
 }
 
-const routes = [ homeinfo, pokeapi ]
+const pokemon = {
+  key: 3,
+  name: "Pokemon",
+  path: "/pokemon/:name",
+  hide: true,
+  component: () => <Pokemon />
+}
+
+const routes = [ homeinfo, listPokemon, pokemon ]
 
 export default routes

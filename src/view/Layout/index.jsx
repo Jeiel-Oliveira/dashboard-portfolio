@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import routes from 'utils/reactRoutes';
 
+import { Title } from './styled'
+
 export default function Layout() {	
 	
 	return (		
@@ -14,15 +16,19 @@ export default function Layout() {
 				<Sidebar />
 
 				<div className="grid-item-content">
-					<Switch>						
+
+					<Switch>
 						{routes.map((route) => (
 							<Route
 								key={route.key}
 								path={route.path}
-								children={<route.component />}
-							/>
+							>	
+								<Title>{route.name}</Title>
+								<route.component />
+							</Route>
 						))}
 					</Switch>
+
 				</div>
 
 			</Router>

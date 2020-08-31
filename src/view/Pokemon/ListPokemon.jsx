@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
-import pokemon from 'consumers/pokemon'
+import pokemon from 'consumers/pokemon';
 
-import CardInfo from 'components/Commom/Cards/cardInfo'
-import Button from 'components/Commom/Buttons/button'
+import CardInfo from 'components/Commom/Cards/cardInfo';
+import Button from 'components/Commom/Buttons/button';
 
-export default function SearchPokemon () {
+import { useHistory } from 'react-router-dom';
+
+function SearchPokemon() {
 
     const [pokemons, setPokemons] = useState([])
     const [offset, setOffeset] = useState(0)
@@ -17,6 +19,8 @@ export default function SearchPokemon () {
 
       return query
     }
+
+    const history = useHistory();
 
     useEffect(() => {
       getPokemons();
@@ -35,9 +39,11 @@ export default function SearchPokemon () {
           <CardInfo
             title={value.name}
             className="grid-item">
-              <Button text="Ver mais" />
+              <Button onClick={() => history.push(`pokemon/${value.name}`)} text="Ver mais" />
           </CardInfo>
         )}
       </div>
     )
 }
+
+export default SearchPokemon

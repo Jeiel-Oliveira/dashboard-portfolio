@@ -1,6 +1,6 @@
 import api from 'services/pokeapi'
 
-const pokemon = {
+const pokeapi = {
 
   list: async (query) => {
 
@@ -16,8 +16,24 @@ const pokemon = {
       throw new Error(err)
     }
 
+  },
+
+  pokemon: async (name) => {
+
+    try {
+      const response = await api.get(`/pokemon/${name}`) 
+
+      return response.data
+    } catch(err) {
+      if(!err.response) {
+        throw new Error("Falha ao fazer requisição")
+      }
+
+      throw new Error(err)
+    }
+
   }
 
 }
 
-export default pokemon
+export default pokeapi
