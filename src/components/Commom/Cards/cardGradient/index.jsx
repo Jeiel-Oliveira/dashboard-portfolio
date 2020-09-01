@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 
 import { Card } from './styled';
 
-function CardBase({ children, color, ...rest }) {
+function CardGradient({ children, color, ...rest }) {
   return (
     <Card color={color} {...rest}>
       {children}
@@ -11,15 +11,14 @@ function CardBase({ children, color, ...rest }) {
   )
 }
 
-CardBase.defaultProps = {
+CardGradient.defaultProps = {
   type: "text",
-  color: "#white"
+  color: "red"
 }
 
-CardBase.propTypes = {
+CardGradient.propTypes = {
   type: propTypes.string,
   color: propTypes.string
 }
 
-export default CardBase
-
+export default CardGradient
