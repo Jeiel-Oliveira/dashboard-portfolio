@@ -14,7 +14,7 @@ const homeinfo = {
 
 const listPokemon = {
   key: 2,
-  name: "Lista de pokemons",
+  name: "Pokemons",
   path: "/pokemons",
   component: () =>  <ListPokemon />
 }

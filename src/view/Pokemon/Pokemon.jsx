@@ -40,7 +40,7 @@ function Pokemon() {
           <CardGradient className="text-center" color={pokemonColor[pokemon.types[0].type.name]}>
             <h1 className="title-pokemon">{pokemon.name}</h1>
 
-            <div className="types-margin">
+            <div className="types-margin flex-full-center">
               {pokemon.types.map((item) => (
                 <TypeSpan color={pokemonColor[item.type.name]}>{item.type.name}</TypeSpan>
               ))}
@@ -62,8 +62,29 @@ function Pokemon() {
             </div>
           </CardGradient>
 
-          <CardGradient color={pokemonColor[pokemon.types[0].type.name]}>
-            <div>batata</div>
+          <CardGradient color={pokemonColor[pokemon.types[0].type.name]} className="text-center">                                    
+            <h1 className="title-pokemon text-center">shiny - Moves</h1>
+
+            <div className="types-margin flex-full-center color-black">
+              {pokemon.abilities.slice(0, 2).map((ability) => (
+                <TypeSpan color={`${pokemonColor[pokemon.types[0].type.name]}900`} className="color-black">{ability.ability.name}</TypeSpan>
+              ))}
+            </div>
+
+            <div className="grid-two-cards">
+
+              <div className="flex-full-center">
+                <div className="circle-behind transform-45-neg" />
+                <img src={pokemon.sprites.front_shiny} alt="shiny pokemon" className="card-with-image" />
+              </div>
+
+              <ul className="list-pokemon list-moves flex-column-center">
+                {pokemon.moves.slice(0, 4).map((move, index) => (
+                  <li className="li-pokemon-moves text-center">{move.move.name}</li>
+                ))}
+              </ul>
+            </div>
+
           </CardGradient>
         </>
       )}

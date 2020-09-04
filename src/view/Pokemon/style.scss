@@ -25,6 +25,7 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  pointer-events: none;
 
   opacity: .3;
   transform: rotateZ(45deg);
@@ -41,6 +42,11 @@
   text-align: left;
   margin: auto 0;
   padding-left: 0;
+  padding: 1px;
+}
+
+.list-moves {
+  min-height: 310px;
 }
 
 .li-pokemon {
@@ -55,8 +61,19 @@
   border-top-left-radius: 10px
 }
 
+.li-pokemon-moves {
+  padding: 8px;
+  margin: 10px 0px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+
+  background-color: #ff1f1f;
+  color: white;
+  border-radius: 10px
+}
+
 .types-margin {
-  margin: 15px;
+  margin: 15px;  
 }
 
 .title-pokemon {

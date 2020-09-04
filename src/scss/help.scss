@@ -1,3 +1,5 @@
+// align text
+
 .text-center {
   text-align: center;
 }
@@ -10,10 +12,40 @@
   text-align: right;
 }
 
+.color-black {
+  color: black !important;
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+// margin
+
+.mg-1 {
+  margin: 5px !important;
+}
+
+.mg-2 {
+  margin: 10px !important;
+}
+
+.mg-3 {
+  margin: 15px !important;
+}
+
+// flex
+
 .flex-full-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flex {
@@ -23,3 +55,17 @@
 .flex-auto {
   flex: auto;
 }
+
+.flex-start {
+  flex: initial;
+}
+
+.flex-end {
+  flex: end;
+}
+
+// transform
+
+.transform-45-neg {
+  transform: rotateZ(-45deg) !important;
+} 

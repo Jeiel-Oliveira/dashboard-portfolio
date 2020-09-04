@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-export const TypeSpan = styled.span `
-  padding: 5px 15px;  
+export const TypeSpan = styled.div `
+  padding: 5px 15px;
   border-radius: 10px;
 
   border: 1px solid black;

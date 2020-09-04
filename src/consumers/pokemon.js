@@ -7,7 +7,7 @@ const pokeapi = {
     try {
       const response = await api.get(`/pokemon${query}`)
 
-      return response.data.results
+      return response.data
     } catch(err) {
       if(!err.response) {
         throw new Error("Falha ao fazer requisição")

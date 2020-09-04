@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import routes from 'utils/reactRoutes';
 
 import LinkSidebar from 'components/Linksidebar';
@@ -22,15 +22,15 @@ export default function Sidebar ({ ...rest }) {
     <div className="grid-item-sidebar">
       <ul>
         {routes.map((route) =>
-          <>
-          {!route.hide && (
-            <LinkSidebar
-              key={route.key}
-              name={route.name}
-              path={route.path}
-            />
-          )}
-          </>
+          <Fragment key={route.key}>
+            {!route.hide && (
+              <LinkSidebar
+                key={route.key}
+                name={route.name}
+                path={route.path}
+              />
+            )}
+          </Fragment>
         )}
       </ul>
     </div>
