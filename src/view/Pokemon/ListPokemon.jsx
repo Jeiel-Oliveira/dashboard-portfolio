@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Pagination } from 'semantic-ui-react'
 
 import pokeapi from 'consumers/pokemon';
 import pokemonColor from 'utils/pokemonColor';
 
 import CardInfo from 'components/Commom/Cards/cardInfo';
 import Button from 'components/Commom/Buttons/button';
-import Pagination from 'components/Commom/pagination';
 
 import { useHistory } from 'react-router-dom';
 
@@ -23,17 +23,15 @@ function ListPokemon() {
 
     const convertPageToOffset = (page, limit) => {
 
-      if(page === 1) return 0;
+      console.log(page)
 
+      if(page === 1) return 0;
       const offsetBase = page * OFFSET;
-      
       return offsetBase;
     }
 
     const makeQuery = () => {
       let query = ''
-          
-      convertPageToOffset(page, )
 
       query += `?limit=${LIMIT}`
       if(page) query += `&offset=${convertPageToOffset(page, LIMIT)}`
@@ -54,6 +52,8 @@ function ListPokemon() {
 
       setPagination(pagination)
     }
+
+    const handlePaginationChange = (e, { activePage }) => setPage(activePage)
 
     const getPokemons = async () => {
       const query = makeQuery();
@@ -98,10 +98,12 @@ function ListPokemon() {
         </div>
 
         <Pagination
-          limit={LIMIT}
-          page={page}
-          count={MAXCOUNTPOKEMON}
-          onPageChange={(value) => setPage(value)}
+          style={{ margin: '15px 0' }}
+          defaultActivePage={1}
+          onPageChange={handlePaginationChange}
+          pointing
+          secondary
+          totalPages={Math.round(MAXCOUNTPOKEMON / LIMIT)}
         />
       </>
     )
