@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Pagination } from 'semantic-ui-react'
+import { Pagination } from 'semantic-ui-react';
+import swal from 'utils/alerts';
 
 import pokeapi from 'consumers/pokemon';
 import pokemonColor from 'utils/pokemonColor';
@@ -19,29 +20,52 @@ function ListPokemon() {
     const LIMIT = 9;
     const MAXCOUNTPOKEMON = 893;
 
-    const [pagination, setPagination] = useState({})
-
-    const convertPageToOffset = (page, limit) => {
-
-      console.log(page)
+    const convertPageToOffset = (page) => {
 
       if(page === 1) return 0;
       const offsetBase = page * OFFSET;
       return offsetBase;
     }
 
-    const makeQuery = () => {
-      let query = ''
-
-      query += `?limit=${LIMIT}`
-      if(page) query += `&offset=${convertPageToOffset(page, LIMIT)}`
-
-      return query
-    }
-
     const history = useHistory();
 
     useEffect(() => {
+
+      const makeQuery = () => {
+        let query = ''
+
+        query += `?limit=${LIMIT}`
+        if(page) query += `&offset=${convertPageToOffset(page)}`
+
+        return query
+      }
+      
+      const getPokemons = async () => {
+        const query = makeQuery();
+  
+        swal.loading(true);
+        const response = await pokeapi.list(query)
+  
+        const listPokemons = response.results
+        
+        makePagination(response)
+  
+        const pokemons = []
+  
+        const promises = Promise.all(listPokemons.map((item) => pokeapi.pokemon(item.name)))
+        .then((resp) => {
+          resp.forEach((item) => {
+            pokemons.push(item)
+          })
+        })
+  
+        await promises
+        swal.loading(false);
+  
+        setPokeDatas(pokemons)
+        setPokemons(listPokemons)
+      }
+
       getPokemons();
     }, [page])
 
@@ -49,34 +73,11 @@ function ListPokemon() {
 
       const pagination = response
       if(pagination.results) delete pagination.results
-
-      setPagination(pagination)
     }
 
     const handlePaginationChange = (e, { activePage }) => setPage(activePage)
 
-    const getPokemons = async () => {
-      const query = makeQuery();
-      const response = await pokeapi.list(query)
-
-      const listPokemons = response.results
-      
-      makePagination(response)
-
-      const pokemons = []
-
-      const promises = Promise.all(listPokemons.map((item) => pokeapi.pokemon(item.name)))
-      .then((resp) => {
-        resp.forEach((item) => {
-          pokemons.push(item)
-        })
-      })
-
-      await promises
     
-      setPokeDatas(pokemons)
-      setPokemons(listPokemons)
-    }
 
     return (
       <>
@@ -89,7 +90,7 @@ function ListPokemon() {
               className="grid-item">
                 <div className="flex-full-center">
                   <div className="circle-behind" />
-                  <img src={pokeDatas[index].sprites.front_default} alt="Imagem dos pokemons" className="card-with-image" />                
+                  <img src={pokeDatas[index].sprites.front_default} alt="Imagem dos pokemons" className="card-with-image" />
                 </div>
 
                 <Button onClick={() => history.push(`pokemon/${value.name}`)} text="Ver mais" />
