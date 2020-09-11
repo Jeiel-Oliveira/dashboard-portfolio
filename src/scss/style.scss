@@ -33,13 +33,28 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
     gap: $base-gap;
+}
+
+.grid-column-1 {
+    grid-template-columns: auto;
+}
+
+.grid-column-2 {
+    grid-template-columns: auto auto;
+}
+
+.grid-column-3 {
+    grid-template-columns: auto auto auto;
+}
+
+.grid-column-4 {
+    grid-template-columns: auto auto auto auto;
 }
 
 .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);    
+    border: 1px solid rgba(0, 0, 0, 0.8);
     padding: $base-padding;
     font-size: 30px;
     text-align: center;

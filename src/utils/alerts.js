@@ -5,6 +5,14 @@ function closeSwal() {
   Swal.close();
 }
 
+const base = (icon, title, text) => {
+  Swal.fire({
+    icon,
+    title,
+    text
+  })
+}
+
 const loading = (show) => {
 
   if(check.isNullUndefined(show)) throw new Error('Passe um valor.')
@@ -24,7 +32,8 @@ const loading = (show) => {
 }
 
 const swal = {
-  loading
+  loading,
+  base
 }
 
 export default swal

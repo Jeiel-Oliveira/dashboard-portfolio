@@ -41,8 +41,8 @@ function Pokemon() {
             <h1 className="title-pokemon">{pokemon.name}</h1>
 
             <div className="types-margin flex-full-center">
-              {pokemon.types.map((item) => (
-                <TypeSpan color={pokemonColor[item.type.name]}>{item.type.name}</TypeSpan>
+              {pokemon.types.map((item, index) => (
+                <TypeSpan key={index} color={pokemonColor[item.type.name]}>{item.type.name}</TypeSpan>
               ))}
             </div>
 
@@ -54,20 +54,20 @@ function Pokemon() {
               </div>
 
               <ul className="list-pokemon">
-                {pokemon.stats.map((status) => (
-                  <li className="li-pokemon flex"><span className="flex-auto">{status.stat.name}</span><span className="text-right">{status.base_stat}</span></li>
+                {pokemon.stats.map((status, index) => (
+                  <li key={index} className="li-pokemon flex"><span className="flex-auto">{status.stat.name}</span><span className="text-right">{status.base_stat}</span></li>
                 ))}
               </ul>
 
             </div>
           </CardGradient>
 
-          <CardGradient color={pokemonColor[pokemon.types[0].type.name]} className="text-center">                                    
+          <CardGradient color={pokemonColor[pokemon.types[0].type.name]} className="text-center">
             <h1 className="title-pokemon text-center">shiny - Moves</h1>
 
             <div className="types-margin flex-full-center color-black">
-              {pokemon.abilities.slice(0, 2).map((ability) => (
-                <TypeSpan color={`${pokemonColor[pokemon.types[0].type.name]}900`} className="color-black">{ability.ability.name}</TypeSpan>
+              {pokemon.abilities.slice(0, 2).map((ability, index) => (
+                <TypeSpan key={index} color={`${pokemonColor[pokemon.types[0].type.name]}900`} className="color-black">{ability.ability.name}</TypeSpan>
               ))}
             </div>
 
@@ -80,7 +80,7 @@ function Pokemon() {
 
               <ul className="list-pokemon list-moves flex-column-center">
                 {pokemon.moves.slice(0, 4).map((move, index) => (
-                  <li className="li-pokemon-moves text-center">{move.move.name}</li>
+                  <li key={index} className="li-pokemon-moves text-center">{move.move.name}</li>
                 ))}
               </ul>
             </div>

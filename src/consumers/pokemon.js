@@ -29,7 +29,7 @@ const pokeapi = {
         throw new Error("Falha ao fazer requisição")
       }
 
-      throw new Error(err)
+      throw err.response
     }
 
   }

@@ -25,7 +25,7 @@ export default function Sidebar ({ ...rest }) {
           <Fragment key={route.key}>
             {!route.hide && (
               <LinkSidebar
-                key={route.key}
+                item={route.key}
                 name={route.name}
                 path={route.path}
               />

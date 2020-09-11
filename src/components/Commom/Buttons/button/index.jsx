@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 function Button({ text, ...rest }) {
 
   return (
-    <button className="btn btn-primary" {...rest} >{text}</button>
+    <button className="btn btn-primary height-auto" {...rest} >{text}</button>
   )
 }  
 

@@ -20,6 +20,13 @@
   z-index: 1;
 }
 
+.card-with-image-mini {
+  width: 120px;
+  height: 120px;
+
+  z-index: 1;
+}
+
 .circle-behind {
   background-image: url("../../assets/pokeball-icon-png-2.jpg");
   background-position: center;
@@ -32,6 +39,22 @@
   margin: auto 0;
   width: 240px;
   height: 240px;
+  
+  position: absolute;
+}
+
+.circle-behind-mini {
+  background-image: url("../../assets/pokeball-icon-png-2.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+
+  opacity: .3;
+  transform: rotateZ(45deg);
+  margin: auto 0;
+  width: 120px;
+  height: 120px;
   
   position: absolute;
 }
