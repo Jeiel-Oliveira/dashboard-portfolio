@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ListPokemon from 'view/Pokemon/ListPokemon';
+import ListButtons from 'view/ListButtons';
 import Pokemon from 'view/Pokemon/Pokemon';
 
 import Home from 'view/Home';
@@ -27,6 +28,13 @@ const pokemon = {
   component: () => <Pokemon />
 }
 
-const routes = [ homeinfo, listPokemon, pokemon ]
+const listButtons = {
+  key: 4,
+  name: "Botões",
+  path: "/buttons",
+  component: () => <ListButtons />
+}
+
+const routes = [ homeinfo, listPokemon, pokemon, listButtons ]
 
 export default routes
