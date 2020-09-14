@@ -93,7 +93,7 @@ function ListPokemon() {
 
   return (
     <>
-      <div className="grid-container grid-column-2 my-3">
+      <div className="grid-container grid-column-4 my-3">
         <Input placeholder="pesquisar" onChange={(event) => setSearch(event.target.value)} />
         <Button text="Pesquisar" onClick={() => searchPokemon(search)} />
       </div>

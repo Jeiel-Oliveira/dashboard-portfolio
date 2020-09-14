@@ -5,7 +5,7 @@ body {
 .grid-item-sidebar {
     grid-area: sidebar;
 
-    background-color: $quaternary-color;
+    background-color: $base-color;
 }
 
 .grid-item-navbar {
@@ -42,14 +42,34 @@ body {
 
 .grid-column-2 {
     grid-template-columns: auto auto;
+
+    @media only screen and (max-width: 425px) {
+        grid-template-columns: auto;
+    }
 }
 
 .grid-column-3 {
     grid-template-columns: auto auto auto;
+
+    @media only screen and (max-width: 1024px) {
+        grid-template-columns: auto auto;
+    }
+
+    @media only screen and (max-width: 425px) {
+        grid-template-columns: auto;
+    }
 }
 
 .grid-column-4 {
     grid-template-columns: auto auto auto auto;
+
+    @media only screen and (max-width: 1024px) {
+        grid-template-columns: auto auto;
+    }
+
+    @media only screen and (max-width: 425px) {
+        grid-template-columns: auto;
+    }
 }
 
 .grid-item {
@@ -60,19 +80,19 @@ body {
     text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 425px) {
     .grid-item-sidebar {
         display: none;
     }
 
     .grid-layout {
         display: grid;
-        grid-template-columns: 250px repeat(3 ,1.1fr);
+        grid-template-columns: auto auto;
         grid-template-rows: 110px 1.5fr 1fr;
         grid-template-areas:
-            "conteudo conteudo conteudo conteudo"
-            "conteudo conteudo conteudo conteudo"
-            "conteudo conteudo conteudo conteudo";
+            "conteudo conteudo"
+            "conteudo conteudo"
+            "conteudo conteudo";
         min-height: 100vh;
     }
 }
