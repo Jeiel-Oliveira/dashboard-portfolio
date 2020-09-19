@@ -1,5 +1,9 @@
 // align text
 
+$spacesOne: 5px;
+$spacesTwo: 10px;
+$spacesThree: 15px;
+
 .text-center {
   text-align: center;
 }
@@ -23,47 +27,133 @@
 // margin
 
 .mg-1 {
-  margin: 5px !important;
+  margin: $spacesOne !important;
 }
 
 .mg-2 {
-  margin: 10px !important;
+  margin: $spacesTwo !important;
 }
 
 .mg-3 {
-  margin: 15px !important;
+  margin: $spacesThree !important;
 }
 
 .mx-1 {
-  margin: 0 5px !important;
+  margin: 0 $spacesOne !important;
 }
 
 .mx-2 {
-  margin: 0 10px !important;
+  margin: 0 $spacesTwo !important;
 }
 
 .mx-3 {
-  margin: 0 15px !important;
+  margin: 0 $spacesThree !important;
 }
 
 .my-1 {
-  margin: 5px 0 !important;
+  margin: $spacesOne 0 !important;
 }
 
 .my-2 {
-  margin: 10px 0 !important;
+  margin: $spacesTwo 0 !important;
 }
 
 .my-3 {
-  margin: 15px 0 !important;
+  margin: $spacesThree 0 !important;
+}
+
+// padding
+
+.pd-1 {
+  padding: $spacesOne !important;
+}
+
+.pd-2 {
+  padding: $spacesTwo !important;
+}
+
+.pd-3 {
+  padding: $spacesThree !important;
+}
+
+.px-1 {
+  padding: 0 $spacesOne !important;
+}
+
+.px-2 {
+  padding: 0 $spacesTwo !important;
+}
+
+.px-3 {
+  padding: 0 $spacesThree !important;
+}
+
+.py-1 {
+  padding: $spacesOne 0 !important;
+}
+
+.py-2 {
+  padding: $spacesTwo 0 !important;
+}
+
+.py-3 {
+  padding: $spacesThree 0 !important;
+}
+
+.py-1 {
+  padding: $spacesOne 0 !important;
+}
+
+.py-2 {
+  padding: $spacesTwo 0 !important;
+}
+
+.pl-1 {
+  padding-left: $spacesOne !important;
+}
+
+.pl-2 {
+  padding-left: $spacesTwo !important;
+}
+
+.pl-3 {
+  padding-left: $spacesThree !important;
 }
 
 // flex
 
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+.flex-grow-3 {
+  flex-grow: 3;
+}
+
 .flex-full-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.flex-align-center {  
+  align-items: center;
+}
+
+.flex-content-center {
+  justify-content: center;
+}
+
+.flex-content-space-around {
+  justify-content: space-around;
+}
+
+.flex-content-space-between {
+  justify-content: space-between;
 }
 
 .flex-column-center {

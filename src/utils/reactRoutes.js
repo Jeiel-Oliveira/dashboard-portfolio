@@ -10,6 +10,7 @@ const homeinfo = {
   key: 1,
   name:"Home",
   path:"/home",
+  icon: "faHome",
   component: () => <Home />
 }
 
@@ -17,6 +18,7 @@ const listPokemon = {
   key: 2,
   name: "Pokemons",
   path: "/pokemons",
+  icon: "faDragon",
   component: () =>  <ListPokemon />
 }
 
@@ -32,6 +34,7 @@ const listButtons = {
   key: 4,
   name: "Botões",
   path: "/buttons",
+  icon: "faSitemap",
   component: () => <ListButtons />
 }
 

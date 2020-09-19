@@ -5,6 +5,8 @@ import LinkSidebar from 'components/Linksidebar';
 
 import { useLocation, useHistory } from "react-router-dom";
 
+import './style.scss';
+
 export default function Sidebar ({ ...rest }) {
 
   const location = useLocation();
@@ -20,11 +22,12 @@ export default function Sidebar ({ ...rest }) {
 
   return (
     <div className="grid-item-sidebar">
-      <ul>
+      <ul className="padding-link-ul-sidebar">
         {routes.map((route) =>
           <Fragment key={route.key}>
             {!route.hide && (
               <LinkSidebar
+                icon={route.icon}
                 item={route.key}
                 name={route.name}
                 path={route.path}
