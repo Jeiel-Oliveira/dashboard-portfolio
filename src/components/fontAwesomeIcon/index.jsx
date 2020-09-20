@@ -2,7 +2,6 @@ import React from 'react'
 import propTypes from 'prop-types'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
 export default function FontIcon({ name, color }) {
   let Icon  
@@ -15,7 +14,7 @@ export default function FontIcon({ name, color }) {
     console.log(err)
   }
 
-  return <FontAwesomeIcon style={{ color: "white" }} icon={Icon} />
+  return <FontAwesomeIcon color={color} icon={Icon} />
 }
 
 FontIcon.propTypes = {

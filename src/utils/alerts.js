@@ -21,6 +21,7 @@ const loading = (show) => {
   if(show) {
     Swal.fire({
       title: 'Carregando!',
+      allowOutsideClick: false,
       onBeforeOpen: () => {
         Swal.showLoading()
       }
