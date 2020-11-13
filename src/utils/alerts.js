@@ -21,7 +21,6 @@ const loading = (show) => {
   if(show) {
     Swal.fire({
       title: 'Carregando!',
-      html: 'I will close in <b></b> milliseconds.',
       onBeforeOpen: () => {
         Swal.showLoading()
       }
