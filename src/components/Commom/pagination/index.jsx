@@ -16,7 +16,7 @@ function Pagination({ page, count, limit, onPageChange }) {
   }, [page, count, limit])
 
   useEffect(() => {
-    console.log(movePage)
+    
     if(movePage) makePagesButton();
   }, [movePage])
 

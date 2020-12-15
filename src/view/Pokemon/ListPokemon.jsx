@@ -18,8 +18,8 @@ function ListPokemon() {
   const [page, setPage] = useState(1)
   const [search, setSearch] = useState()
 
-  const OFFSET = 8;
-  const LIMIT = 8;
+  const OFFSET = 12;
+  const LIMIT = 12;
   const MAXCOUNTPOKEMON = 893;
 
   const convertPageToOffset = (page) => {
@@ -80,6 +80,8 @@ function ListPokemon() {
   const handlePaginationChange = (e, { activePage }) => setPage(activePage)
 
   const searchPokemon = async (pokemon) => {
+
+    if(!pokemon) return ''
 
     pokemon = pokemon.toLowerCase();
 
