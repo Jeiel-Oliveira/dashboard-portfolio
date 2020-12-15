@@ -15,8 +15,8 @@ const pokemonColor = {
   poison: "#944795",
   water: "#6c8bdd",
   fairy: "#dfa4de",
-  electr: "#f6cd3f",
+  electric: "#f6cd3f",
   normal: "#a8aa78"
 }
 
-export default pokemonColor
+module.exports = pokemonColor
